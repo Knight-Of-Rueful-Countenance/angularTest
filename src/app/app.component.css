@@ -1,0 +1,39 @@
+.filler {
+    flex: 1 1 auto;
+ }
+ .gap {
+    margin-right: 20px;
+ }
+ .cube {
+    float: left;
+    width: 150px; 
+    height: 150px;
+}
+.centre-square {
+    width: 80%;
+    transform: translate(-13%,0%);
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    display:flex;
+    flex-direction:row;
+  }
+  
+
+.blocktext {
+    margin: 5%;
+    display: flex;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+}
+
+
+.centre-square > div
+{
+  flex:1 1 auto;
+  border:1px red solid;
+  text-align:center;
+
+  margin:2%;  /* and that, will result in a 10px gap */
+}
