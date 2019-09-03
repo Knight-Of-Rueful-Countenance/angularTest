@@ -18,6 +18,7 @@ RUN npm install
 RUN npm install -g @angular/cli
 RUN npm install @angular/material @angular/cdk @angular/animations
 RUN npm install hammerjs
+RUN npm install gitignore-to-dockerignore
 # add app
 COPY . /app
 
