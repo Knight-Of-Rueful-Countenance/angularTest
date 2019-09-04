@@ -7,19 +7,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatToolbarModule} from '@angular/material'
+import {MatToolbarModule} from '@angular/material';
+import { GstAddComponent } from './gst-add/gst-add.component';
+import { GstGetComponent } from './gst-get/gst-get.component';
+import { GstEditComponent } from './gst-edit/gst-edit.component'
+
+import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GstAddComponent,
+    GstGetComponent,
+    GstEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatCheckboxModule,
-    MatToolbarModule
+    MatToolbarModule,
+    SlimLoadingBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

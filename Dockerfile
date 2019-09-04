@@ -19,6 +19,8 @@ RUN npm install -g @angular/cli
 RUN npm install @angular/material @angular/cdk @angular/animations
 RUN npm install hammerjs
 RUN npm install gitignore-to-dockerignore
+RUN npm install rxjs-compat
+RUN npm install ng2-slim-loading-bar 
 # add app
 COPY . /app
 
