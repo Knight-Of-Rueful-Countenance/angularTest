@@ -1,0 +1,48 @@
+<div class="loginBackground" (click)="deleteMe()"></div>
+<div class="centre-square">
+  <div class= "mat-elevation-z6">
+      <mat-toolbar class = "mat-elevation-z2" color = "primary">
+          <p>Hello {{username2}}</p>
+        </mat-toolbar>
+    <div>
+      <form [formGroup]="angForm" novalidate>
+        <div class="spaced-out form-group">
+          <label class = "col-md-4">Username</label>
+          <input type="text" class="form-control" formControlName="username" required [(ngModel)]="username2">
+        </div>
+        <div class="spaced-out form-group">
+            <label class = "col-md-4">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+          </div>
+          <div *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['username'].errors.required">
+                  Usernames must be:
+                <ul>
+                  <li>Between 4-32 characters.</li>
+                  <li>Made from Alphanumeric Characters only</li>
+                </ul>
+              </div>
+            </div>
+            <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['password'].errors.required">
+                    Passwords must be:
+                  <ul>
+                    <li>Between 4-32 characters.</li>
+                    <li>Contain at least 1 symbol, 1  number 1 upper and 1 lowercase letter</li>
+                  </ul>
+                </div>
+              </div>
+        <div class="spaced-out form-group in-rows">
+            <button type="button" (click)="deleteMe()"
+            class="mat-stroked-button" color="primary"><i class="material-icons middled">arrow_back</i>Back</button>
+            <button type="submit" (click) = "this.auth.newAccount(username.value,password.value)"
+            [disabled]="angForm.pristine || angForm.invalid"
+            class="mat-stroked-button" color="light blue">Sign Up<i class="material-icons middled">add</i></button>
+            <button type="submit" (click)="this.auth.authenticate(username.value,password.value)"
+            [disabled]="angForm.pristine || angForm.invalid"
+            class="mat-stroked-button" color="light blue">Sign in<i class="material-icons middled">arrow_forward</i></button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

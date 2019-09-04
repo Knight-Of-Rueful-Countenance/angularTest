@@ -21,6 +21,11 @@ RUN npm install hammerjs
 RUN npm install gitignore-to-dockerignore
 RUN npm install rxjs-compat
 RUN npm install ng2-slim-loading-bar 
+
+#BACKEND DEPENDENCIES
+RUN cd backend && npm install express body-parser cors mongoose nodemon
+
+
 # add app
 COPY . /app
 

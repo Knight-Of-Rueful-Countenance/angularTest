@@ -1,0 +1,53 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+.centre-square {
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+  width:20%;
+  height:20%;
+}
+
+
+
+.centre-square > div
+{
+opacity: 1;
+background: white;
+flex:1 1 auto;
+text-align:center;
+overflow:hidden;
+margin:2%;  /* and that, will result in a 10px gap */
+}
+
+.spaced-out{
+  margin: 5%;
+}
+
+.in-rows{
+  display:flex;
+  flex-direction:row;
+}
+.in-rows > * {
+  margin:2%;
+  flex: 1 1 auto;
+}
+
+
+.loginBackground {
+  position:fixed;
+  z-index: 2;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background:rgba(0,0,0,.5);
+}
+
+.middled {
+  vertical-align: 0%;
+}

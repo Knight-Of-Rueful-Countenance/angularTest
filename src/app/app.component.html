@@ -4,16 +4,15 @@
     <title>{{title}}</title>
   </header>
   <body>
-      <ng2-slim-loading-bar color="orange"></ng2-slim-loading-bar>
-      <mat-toolbar class="mat-elevation-z6" color = "primary">
+      <ng2-slim-loading-bar color="orange" style="z-index:4"></ng2-slim-loading-bar>
+      <mat-toolbar class="mat-elevation-z6" style="z-index:4" color = "primary">
           <span>Home page</span>
           <span class = "filler"></span>
-          <span><button mat-flat-button color="primary">Things</button></span>
+          <span><button mat-flat-button color="primary">About</button></span>
           <span><button mat-flat-button color="primary">Tools</button></span>
-          <span><button mat-stroked-button color="accent">Accent</button></span>
-          <span><button mat-flat-button color="primary" routerLink="api">About</button></span>
+          <span><button mat-stroked-button color="accent" (click)="isEnabled=true;">Sign in</button></span>
+          <span><button mat-flat-button color="primary">About</button></span>
        </mat-toolbar>
-       <br><br><br><br>
        <div class="wrapper centre-square">
         <div class= "mat-elevation-z6">
             <mat-toolbar class = "mat-elevation-z2" color = "warn">
@@ -32,5 +31,7 @@
             </div>
         </div>
       </div>
+        <app-login *ngIf="isEnabled" (delete)="isEnabled=false;"></app-login>
+
   </body>
 </html>

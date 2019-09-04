@@ -13,13 +13,20 @@ import { GstGetComponent } from './gst-get/gst-get.component';
 import { GstEditComponent } from './gst-edit/gst-edit.component'
 
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+
+import { KeyUpComponent } from './key-up/key-up.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     GstAddComponent,
     GstGetComponent,
-    GstEditComponent
+    GstEditComponent,
+    LoginComponent,
+    KeyUpComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,9 @@ import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
-    SlimLoadingBarModule
+    SlimLoadingBarModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
