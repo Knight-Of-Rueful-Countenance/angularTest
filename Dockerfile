@@ -23,7 +23,7 @@ RUN npm install rxjs-compat
 RUN npm install ng2-slim-loading-bar 
 
 #BACKEND DEPENDENCIES
-RUN cd backend && npm install express body-parser cors mongoose nodemon
+RUN cd backend && npm install express body-parser cors nodemon copy-assets typescript rimraf && cd ../
 
 
 # add app
