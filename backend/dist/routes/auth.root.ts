@@ -39,8 +39,6 @@ authRoutes.route("/login").post( (req, res) => {
     const access_key: string = uuid.v1();
     const expiry: number = Date.now() + 86400;
     res.status(200).json({expiry, access_key, message: "OK"});
-    // tslint:disable-next-line: no-console
-    console.log("successfully did the thing");
   } else {
     res.status(400).json({message: "Invalid Password"});
   }

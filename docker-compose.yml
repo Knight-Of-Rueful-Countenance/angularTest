@@ -18,13 +18,14 @@ services:
   backend:
     container_name: angl_back
     environment: 
-      - Backend=http://127.0.0.1/27017
+      - Database=http://127.0.0.1/27017
     build:
-      context: .
-      dockerfile: backend/Backend-Dockerfile
+      context: './backend'
+      dockerfile: Backend-Dockerfile
+    network_mode: 'host'
     volumes:
-      - '.:/app'
-      - '/app/node_modules'
+      - './backend:/app'
+      - '/app/backend/node_modules'
     ports:
       - '4001:4000'
 

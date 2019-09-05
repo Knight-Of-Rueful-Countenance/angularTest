@@ -35,12 +35,12 @@
         <div class="spaced-out form-group in-rows">
             <button type="button" (click)="deleteMe()"
             class="mat-stroked-button" color="primary"><i class="material-icons middled">arrow_back</i>Back</button>
-            <button type="submit" (click) = "this.auth.newAccount(username.value,password.value)"
+            <button type="button" (click) = "newAccount()"
             [disabled]="angForm.pristine || angForm.invalid"
-            class="mat-stroked-button" color="light blue">Sign Up<i class="material-icons middled">add</i></button>
-            <button type="submit" (click)="this.auth.authenticate(username.value,password.value)"
+            class="mat-stroked-button" color="primary">Sign Up<i class="material-icons">add</i></button>
+            <button type="button" (click)="authenticate()"
             [disabled]="angForm.pristine || angForm.invalid"
-            class="mat-stroked-button" color="light blue">Sign in<i class="material-icons middled">arrow_forward</i></button>
+            class="mat-stroked-button" color="warn">Sign in<i class="material-icons">arrow_forward</i></button>
           </div>
       </form>
     </div>

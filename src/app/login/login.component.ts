@@ -34,4 +34,10 @@ export class LoginComponent implements OnInit {
     this.delete.emit('Cancelled');
     history.state.data = {};
   }
+  async authenticate() {
+    await this.auth.authenticate(this.angForm.value.username, this.angForm.value.password);
+  }
+  async newAccount() {
+    await this.auth.newAccount(this.angForm.value.username,  this.angForm.value.password);
+  }
 }
