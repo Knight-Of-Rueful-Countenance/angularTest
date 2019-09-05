@@ -6,13 +6,13 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  uri = 'http://localhost:4000/authentication';
+  uri = 'http://localhost:4001/api/auth';
   token: Tokens;
   constructor(private http: HttpClient) { }
 
   async authenticate(username, password) {
     const obj = {username, password};
-    await this.http.post(`${this.uri + '/login'}/add`, obj).subscribe(async (res: Response) => {
+    await this.http.post(`${this.uri}/login`, obj).subscribe(async (res: Response) => {
       const body = await res.json();
       if (body.message === 'OK') {
         // token has probably been provided.
@@ -26,7 +26,7 @@ export class AuthenticationService {
   }
   async newAccount(username, password) {
     const obj = {username, password};
-    await this.http.post(`${this.uri + '/login'}/new`, obj).subscribe(async (res: Response) => {
+    await this.http.post(`${this.uri}/new`, obj).subscribe(async (res: Response) => {
       const body = await res.json();
       if (body.message === 'OK') {
         // token has probably been provided.

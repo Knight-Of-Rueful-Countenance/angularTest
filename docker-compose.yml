@@ -2,8 +2,10 @@ version: '3.7'
 
 services:
 
-  example:
+  frontend:
     container_name: angl
+    environment: 
+      - Backend=http://127.0.0.1/4000
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,3 +14,27 @@ services:
       - '/app/node_modules'
     ports:
       - '4201:4200'
+
+  backend:
+    container_name: angl_back
+    environment: 
+      - Backend=http://127.0.0.1/27017
+    build:
+      context: .
+      dockerfile: backend/Backend-Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '4001:4000'
+
+  mongoose:
+    container_name: angl_db
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    network_mode: 'host'
+    volumes:
+      - './backend/configs:/configs'
+    ports:
+      - '27018:27017'
