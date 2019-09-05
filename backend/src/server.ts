@@ -12,7 +12,7 @@ if (result.error) {
 const app = express();
 const port = process.env.PORT || 4000;
 app.set("port", process.env.PORT || 4000);
-
+mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DB, {useNewUrlParser: true}).then(
   // tslint:disable-next-line: no-console

@@ -33,6 +33,7 @@ authRoutes.route("/login").post( (req, res) => {
   try {
   // tslint:disable-next-line: no-console
   console.log("started to do the thing");
+
   const result: any = Credentials.findOne({username: req.body.username }, {password: 1});
   if (bcrypt.compareSync(req.body.password, result.password)) {
     // tslint:disable-next-line: variable-name
@@ -43,9 +44,13 @@ authRoutes.route("/login").post( (req, res) => {
     console.log("successfully did the thing");
   } else {
     res.status(400).json({message: "Invalid Password"});
+    // tslint:disable-next-line: no-console
+    console.log("Invalid password");
   }
 } catch (err) {
   res.status(400).json({message: err});
+  // tslint:disable-next-line: no-console
+  console.log("failed: " + err);
 }
 });
 
