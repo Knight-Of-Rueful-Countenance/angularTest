@@ -16,6 +16,7 @@ authRoutes.route("/new").post( (req, res) => {
   });
   creds.save().then(
     (resu) => {
+
       // tslint:disable-next-line: variable-name
       const access_key: string = uuid.v1();
       const expiry: number = Date.now() + 86400;
